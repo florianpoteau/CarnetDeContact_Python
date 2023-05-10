@@ -7,4 +7,4 @@ Aucune programmation en POO n'a été demandé mais l'utilisation d'un objet a �
 
 ## Contributeur
 
-Poteau Florian [https://github.com/florianpoteau]
+Poteau Florian https://github.com/florianpoteau
