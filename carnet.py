@@ -34,13 +34,16 @@ def fin():
 
 
 def ajouter_contact():
-    nom = input("Taper le nom du contact: ")
-    numero = int(input("Taper le numero du contact: "))
-    carnet.append([{"nom": nom, "numero": numero}])
-    print("-------------------------------------------------------------------")
-    print("Votre contact a bien été ajouté a la liste")
-    print(carnet)
-    fin()
+    try:
+        nom = input("Taper le nom du contact: ")
+        numero = int(input("Taper le numero du contact: "))
+        carnet.append([{"nom": nom, "numero": numero}])
+        print("-------------------------------------------------------------------")
+        print("Votre contact a bien été ajouté a la liste")
+        print(carnet)
+        fin()
+    except ValueError:
+        ajouter_contact()
 
 
 def supprimer():
@@ -110,21 +113,25 @@ def modifier():
                     print(carnet)
 
         case 2:
+            try:
 
-            telephone = int(input(
-                "Entrez le numéro de téléphone que vous souhaitez modifier: "))
+                telephone = int(input(
+                    "Entrez le numéro de téléphone que vous souhaitez modifier: "))
 
-            for i in carnet:
-                if telephone == i["numero"]:
-                    nouveauNumero = int(input(
-                        "Entrez le nouveau numéro de téléphone "))
-                    i["numero"] = nouveauNumero
-                    print(
-                        "-------------------------------------------------------------------")
-                    print(carnet)
+                for i in carnet:
+                    if telephone == i["numero"]:
+                        nouveauNumero = int(input(
+                            "Entrez le nouveau numéro de téléphone "))
+                        i["numero"] = nouveauNumero
+                        print(
+                            "-------------------------------------------------------------------")
+                        print(carnet)
 
+            except ValueError:
+                modifier()
 
-# ajouter_contact(nom1, numero1)
+                # ajouter_contact(nom1, numero1)
+
 
 def interface():
     print("----------------------------------------------------------------")
